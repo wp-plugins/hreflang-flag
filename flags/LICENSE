@@ -1,0 +1,46 @@
+The flag image in this directory comes from several places.
+
+FAMFAMFAM FLAGS:
+Most of the flags comes from http://www.famfamfam.com abd are subject to the following licence:
+================================================================================
+Flag icons - http://www.famfamfam.com
+
+These icons are public domain, and as such are free for any use (attribution appreciated but not required).
+
+Note that these flags are named using the ISO3166-1 alpha-2 country codes where appropriate. A list of codes can be found at http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+
+If you find these icons useful, please donate via paypal to mjames@gmail.com (or click the donate button available at http://www.famfamfam.com/lab/icons/silk)
+
+Contact: mjames@gmail.com
+
+================================================================================
+
+MORE FLAGS: aq.png bl.png gg.png im.png je.png mf.png
+Those six flags comes from fam-moreflags set by John Crepezzi available at:
+http://blog.johncrepezzi.com/archives/104
+================================================================================
+I needed some flag icons for a project i’m working on. I wanted the icons to follow ISO-3166 as not to miss any countries. I found a great resource on famfamfam.com
+
+http://www.famfamfam.com/lab/icons/flags/
+
+247 such icons in GIF and PNG formats
+
+Lining this up against current ISO-3166, I found a few missing, particularly:
+Antartica (aq)
+Saint Barthelemy (bl)
+Guernsey (gg)
+Isle of Man (im)
+Jersey (je)
+St. Martin (mf)
+
+I made up these icons to match the existing set for these extra countries.
+Feel free to use these (public domain) icons anywhere you’d like to round out your flag set. They’re the same dimensions as the original set. Attribution is appreciated, not required at all.
+
+================================================================================
+
+EXTRA FLAG: en.png
+
+As I wanted language flags not country flags so I created en en.png based on a mix of gb and us. I mean I speak some variant of globish anyway...
+
+This extra icon is also public domain, and as such is free for any use (attribution appreciated but not required).
+
