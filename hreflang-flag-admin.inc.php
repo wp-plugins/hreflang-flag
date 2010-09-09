@@ -211,7 +211,7 @@ if (!class_exists("hreflangFlagAdmin")) {
 
       // Define default option settings
       function add_defaults_options() {
-        $tmp = ''; //get_option('hreflangFlag_config');
+        $tmp = get_option('hreflangFlag_config');
 	if (!is_array($tmp)) {
     	  $arr = array(	'flags_url' 	=> $this->plugin_url.'flags/',
 	  		'flags_path' 	=> $this->plugin_path.'flags/',
@@ -219,7 +219,7 @@ if (!class_exists("hreflangFlagAdmin")) {
 			'test'		=> 'fam.png' );
 	  update_option('hreflangFlag_config', $this->validate_config($arr));
 	}
-        $tmp = ''; //get_option('hreflangFlag');
+        $tmp = get_option('hreflangFlag');
 	if (!is_array($tmp)) {
     	  $arr = array();
 	  $arr[] = array( 'code' => 'fr', 'img' => 'fr.png');

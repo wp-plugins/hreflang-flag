@@ -21,13 +21,27 @@ hreflang Flag plugin uses [css3 selectors](http://www.w3.org/TR/css3-selectors/#
 
 == Frequently Asked Questions ==
 
-Please see plugin homepage.
+= I have external link icon the way wikipedia does it, is it compatible with hreflang Flag ? =
+Well, no :( 
+
+hreflang Flag uses the same technique of setting the css background of the a tag, so the displayed icon will be the last css match (probably the flag) you have to choose one.
+There could be a possibility as described here: http://www.quirksmode.org/css/multiple_backgrounds.html
+but this only work on webkit based browser. However this is not implemented in hreflang Flag now.
+
+= More questions ? =
+
+Please see plugin homepage: http://silicone.homelinux.org/projects/hreflang-flag
+
+Or search wordpress.org Forums.
 
 == Screenshots ==
 
 1. Sample flagged links.
 
 == Changelog ==
+
+= 1.1 =
+* configuration is not reseted after re-enabling the plugin anymore.
 
 = 1.0 =
 * initial release
