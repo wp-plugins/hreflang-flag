@@ -1,7 +1,7 @@
 === hreflang Flag ===
 Contributors: julienvdg
 Donate link: http://silicone.homelinux.org/
-Tags: flag, flags, css, hreflang, lang, lanuguage
+Tags: flag, flags, css, hreflang, lang, language
 Requires at least: 2.7
 Tested up to: 3.0.1
 Stable tag: trunk
@@ -11,6 +11,10 @@ Add a flag icon to link corresponding to the hreflang attribute.
 == Description ==
 
 hreflang Flag plugin uses [css3 selectors](http://www.w3.org/TR/css3-selectors/#attribute-selectors "W3C CSS3 Attribute selectors description") to add a flag icon to your links depending on their [hreflang attribute](http://www.w3.org/TR/html401/struct/links.html#adef-hreflang "hreflang attribute description on W3C").
+
+This is really useful if you regularly link to pages in other languages and you want to inform your visitors about the language of the link target.
+
+It's even more useful if your own blog is multilingual.
 
 == Installation ==
 
