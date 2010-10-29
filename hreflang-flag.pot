@@ -1,0 +1,165 @@
+# Translation of the WordPress plugin hreflang Flag 1.2 by Julien Viard de Galbert.
+# Copyright (C) 2010 Julien Viard de Galbert
+# This file is distributed under the same license as the hreflang Flag package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hreflang Flag 1.2\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/hreflang-flag\n"
+"POT-Creation-Date: 2010-10-29 21:13+0200\n"
+"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: hreflang-flag-admin.inc.php:87
+msgid "hreflang Flag Options"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:88
+#, php-format
+msgid ""
+"The included flags mostly comes from <a href=\"http://www.famfamfam.com"
+"\">http://www.famfamfam.com</a>, some more from <a href=\"http://blog."
+"johncrepezzi.com/archives/104\">John Crepezzi's blog</a> and I added one... "
+"For details check the <a href=\"%sflags/LICENSE\">icon's license file</a>. "
+"But the configuration allows you to use any other set of icons you want, "
+"simply update the URL and path bellow (the path is for hreflang Flag to do "
+"some checks on the images, it's only used for the configuration). And then "
+"complete your flag configuration."
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:93
+msgid "Save Changes"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:117
+msgid "Left"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:122
+msgid "Right"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:127
+msgid "Automatic style"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:132
+msgid "Custom Style"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:140
+msgid ""
+"hreflang Flag uses CSS to add flags to links, see <a href=\"http://www.w3."
+"org/TR/css3-selectors/#attribute-selectors\">W3C CSS3 Attribute selectors "
+"description</a> for more details on how it's defined."
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:148
+msgid "select match kind"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:152
+msgid "match string"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:154
+msgid "image file"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:154
+msgid "Image: "
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:158
+msgid "Fill this to add a new flag and save changes."
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:162
+msgid ""
+"You can also remove a flag by clearing either the match string or the image "
+"file."
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:163
+msgid ""
+"The order flags apear in the above table will be the order used in the css, "
+"so the last match is applied."
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:173
+msgid "Main Settings"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:174
+msgid "Flags base URL"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:175
+msgid "Flags base directory"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:175
+msgid "This directory must correspond to the URL above."
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:176
+msgid "Flag icon position"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:178
+msgid "Test flag"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:178
+msgid "Some text a"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:178
+msgid "sample Link"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:178
+msgid "some more text."
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:179
+msgid "CSS Selector"
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:179
+msgid ""
+"Comma separated list of CSS selector (each will be used before the \"a\" tag "
+"in the CSS definition).<br />Example: \".entry\" will show flags only inside "
+"post/page entry nowhere else."
+msgstr ""
+
+#: hreflang-flag-admin.inc.php:182
+msgid "Flag Settings"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "hreflang Flag"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://silicone.homelinux.org/projects/hreflang-flag"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Add a flag icon to link corresponding to the hreflang attribute."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Julien Viard de Galbert"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://silicone.homelinux.org/"
+msgstr ""

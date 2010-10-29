@@ -3,10 +3,11 @@
 Plugin Name: hreflang Flag
 Plugin URI: http://silicone.homelinux.org/projects/hreflang-flag
 Description: Add a flag icon to link corresponding to the hreflang attribute.
-Version: 1.1
+Version: 1.2
 Author: Julien Viard de Galbert
 Author URI: http://silicone.homelinux.org/
 License: GPL2+
+Text Domain: hreflang-flag
 */
 /*  Copyright (C) 2010  Julien Viard de Galbert <julien@silicone.homelinux.org>
 

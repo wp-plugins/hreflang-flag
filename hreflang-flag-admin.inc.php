@@ -22,6 +22,7 @@
 // class for admin plugin features
 if (!class_exists("hreflangFlagAdmin")) {
   class hreflangFlagAdmin extends hreflangFlag {
+      var $plugin_base_path;
       var $plugin_path;
       var $plugin_url;
 
@@ -83,8 +84,8 @@ if (!class_exists("hreflangFlagAdmin")) {
 ?>
 	<div class="wrap">
 		<div class="icon32" id="icon-options-general"><br></div>
-		<h2>hreflang Flag Options</h2>
-		The proposed flags mostly comes from <a href="http://www.famfamfam.com">http://www.famfamfam.com</a>, some more from <a href="http://blog.johncrepezzi.com/archives/104">John Crepezzi's blog</a> and I added one... For details check the <a href="<?php echo $this->plugin_url; ?>flags/LICENSE">icon's license file</a>. But the configuration allows you to use any other set of icons you want, simply update the URL and path bellow (the path is for hreflang Flag to do some checks on the images, it's only used for the configuration). And then complete your flag configuration.
+		<h2><?php _e('hreflang Flag Options', 'hreflang-flag')?></h2>
+		<?php printf(__('The included flags mostly comes from <a href="http://www.famfamfam.com">http://www.famfamfam.com</a>, some more from <a href="http://blog.johncrepezzi.com/archives/104">John Crepezzi\'s blog</a> and I added one... For details check the <a href="%sflags/LICENSE">icon\'s license file</a>. But the configuration allows you to use any other set of icons you want, simply update the URL and path bellow (the path is for hreflang Flag to do some checks on the images, it\'s only used for the configuration). And then complete your flag configuration.', 'hreflang-flag'), $this->plugin_url)?>
 		<form action="options.php" method="post">
 		<?php settings_fields('hreflangFlag_group'); ?>
 		<?php do_settings_sections(__FILE__); ?>
@@ -113,22 +114,22 @@ if (!class_exists("hreflangFlagAdmin")) {
 	if ($options['position'] === 'left') {
 	  echo " checked='checked'";
 	}
-	echo "' /> Left </label>\n";
+	echo "' /> " . __('Left', 'hreflang-flag') . " </label>\n";
 	echo "<label title='right'><input type='radio' name='{$args['o']}[position]' value='right'";
 	if ($options['position'] === 'right') {
 	  echo " checked='checked'";
 	}
-	echo " /> Right </label><br />\n";
+	echo " /> " . __('Right', 'hreflang-flag') . " </label><br />\n";
 	echo "<label title='style-auto'><input type='radio' name='{$args['o']}[style]' value='auto'";
 	if ($options['style'] === 'auto') {
 	  echo " checked='checked'";
 	}
-	echo ' /> ' . __('Automatic style') . " </label><br />\n";
+	echo ' /> ' . __('Automatic style', 'hreflang-flag') . " </label><br />\n";
 	echo "<label title='style-custom'><input type='radio' name='{$args['o']}[style]' value='custom' id='style-custom-radio'";
 	if ($options['style'] === 'custom') {
 	  echo " checked='checked'";
 	}
-	echo ' /> ' . __('Custom Style') . " </label><br />\n";
+	echo ' /> ' . __('Custom Style', 'hreflang-flag') . " </label><br />\n";
 	echo '<label title="background-position">background-position: <input type="text" name="'.$args['o'].'[background-position]" value="' . $options['background-position'] . '" /></label><br />'. "\n";
 	echo '<label title="padding-left-right">padding-<span id="left-right">left/right</span>: <input type="text" name="'.$args['o'].'[padding-size]" value="' . $options['padding-size'] .  '" /></label><br />'. "\n";
 
@@ -136,7 +137,7 @@ if (!class_exists("hreflangFlagAdmin")) {
 
       function flag_section($args) {
 	$options = get_option('hreflangFlag_config');
-	echo '<p>hreflangFlags uses CSS to add flags to links, see <a href="http://www.w3.org/TR/css3-selectors/#attribute-selectors">W3C CSS3 Attribute selectors description</a> for more details on how it\'s defined.</p>';
+	echo '<p>' . __('hreflang Flag uses CSS to add flags to links, see <a href="http://www.w3.org/TR/css3-selectors/#attribute-selectors">W3C CSS3 Attribute selectors description</a> for more details on how it\'s defined.', 'hreflang-flag') . "</p>\n";
 	$flags = get_option('hreflangFlag');
 	$flags[] = array( 'code' => '');
 	$matches = array( '', '|', '~', '^', '$', '*' );
@@ -144,41 +145,41 @@ if (!class_exists("hreflangFlagAdmin")) {
 	  $match=isset($flag['match'])?$flag['match']:'';
 	  echo 'hreflang ';
 	  foreach($matches as $m) {
-	    echo '<label title="select match kind"><input type="radio" name="hreflangFlag['.$i.'][match]" value="'.$m.'"';
+	    echo '<label title="' . __('select match kind', 'hreflang-flag') . '"><input type="radio" name="hreflangFlag['.$i.'][match]" value="'.$m.'"';
 	    if ($m === $match) echo " checked='checked'";
 	    echo ' />'.$m."= </label>";
 	  }
-	  echo ' <label title="match string"><input type="text" name="hreflangFlag['.$i.'][code]" value="'.$flag[code].'" class="small-text" /></label>';
+	  echo ' <label title="' . __('match string', 'hreflang-flag') . '"><input type="text" name="hreflangFlag['.$i.'][code]" value="'.$flag[code].'" class="small-text" /></label>';
 
-	  echo ' <label title="image file">Image: <input type="text" name="hreflangFlag['.$i.'][img]" value="'.$flag[img].'" /></label>';
+	  echo ' <label title="' . __('image file', 'hreflang-flag') . '">' . __('Image: ', 'hreflang-flag') . '<input type="text" name="hreflangFlag['.$i.'][img]" value="'.$flag[img].'" /></label>';
 	  if (isset($flag[img])) {
 	    echo ' <img src="'.$options['flags_url'].$flag[img].'" />';
 	  } else {
-	    echo " Fill this to add a new flag and save changes.";
+	    echo ' ' . __('Fill this to add a new flag and save changes.', 'hreflang-flag');
 	  }
 	  echo "<br />\n";
 	}
-	echo "<p>You can also remove a flag by clearing either the match string or the image file.</p>";
-	echo "<p>The order flags apear in the above table will be the order used in the css, so the last match is applied.</p>";
+	echo '<p>' . __('You can also remove a flag by clearing either the match string or the image file.', 'hreflang-flag') . "</p>\n";
+	echo '<p>' . __('The order flags apear in the above table will be the order used in the css, so the last match is applied.', 'hreflang-flag') . "</p>\n";
       }
 
       function admin_menu() {
-	add_options_page('hreflang Flag Options', 'hreflag Flag', 'manage_options', __FILE__, array(&$this,'options_page'));
+	add_options_page('hreflang Flag Options', 'hreflang Flag', 'manage_options', __FILE__, array(&$this,'options_page'));
       }
 
       // Register our settings. Add the settings section, and settings fields
       function admin_init(){
 	register_setting('hreflangFlag_group', 'hreflangFlag_config', array(&$this,'validate_config') );
-	add_settings_section('config_section', 'Main Settings', array(&$this,'settings_section'), __FILE__);
-	add_settings_field('flags_base_url', 'Flags base URL', array(&$this,'setting_string_fn'), __FILE__, 'config_section', array('o' => 'hreflangFlag_config', 'f' => 'flags_url'));
-	add_settings_field('flags_base_dir', 'Flags base directory', array(&$this,'setting_string_fn'), __FILE__, 'config_section', array('o' => 'hreflangFlag_config', 'f' => 'flags_path', 't' => 'This directory must correspond to the URL above.'));
-	add_settings_field('position', 'Flag icon position', array(&$this,'setting_position_fn'), __FILE__, 'config_section', array('o' => 'hreflangFlag_config'));
+	add_settings_section('config_section', __('Main Settings', 'hreflang-flag'), array(&$this,'settings_section'), __FILE__);
+	add_settings_field('flags_base_url', __('Flags base URL', 'hreflang-flag'), array(&$this,'setting_string_fn'), __FILE__, 'config_section', array('o' => 'hreflangFlag_config', 'f' => 'flags_url'));
+	add_settings_field('flags_base_dir', __('Flags base directory', 'hreflang-flag'), array(&$this,'setting_string_fn'), __FILE__, 'config_section', array('o' => 'hreflangFlag_config', 'f' => 'flags_path', 't' => __('This directory must correspond to the URL above.', 'hreflang-flag')));
+	add_settings_field('position', __('Flag icon position', 'hreflang-flag'), array(&$this,'setting_position_fn'), __FILE__, 'config_section', array('o' => 'hreflangFlag_config'));
 	$options = get_option('hreflangFlag_config');
-	add_settings_field('test_flag', 'Test flag', array(&$this,'setting_string_fn'), __FILE__, 'config_section', array('o' => 'hreflangFlag_config', 'f' => 'test', 't' => "<br>Some text a <a id='test_flag' href='#' style='background:url({$options['flags_url']}{$options['test']}) {$options['background-position']} no-repeat; padding-{$options['position']}: {$options['padding-size']};'>sample Link</a> some more text."));
-	add_settings_field('css_selector', 'CSS Selector', array(&$this,'setting_string_fn'), __FILE__, 'config_section', array('o' => 'hreflangFlag_config', 'f' => 'css_selector', 't' => 'Comma separated list of css selector (each will be used before the "a" tag in the css definition).<br />Exemple: ".entry" will show flags only inside post/page entry nowhere else.'));
+	add_settings_field('test_flag', __('Test flag', 'hreflang-flag'), array(&$this,'setting_string_fn'), __FILE__, 'config_section', array('o' => 'hreflangFlag_config', 'f' => 'test', 't' => '<br>' . __('Some text a', 'hreflang-flag') . " <a id='test_flag' href='#' style='background:url({$options['flags_url']}{$options['test']}) {$options['background-position']} no-repeat; padding-{$options['position']}: {$options['padding-size']};'>" . __('sample Link', 'hreflang-flag') . '</a> ' . __('some more text.', 'hreflang-flag')));
+	add_settings_field('css_selector', __('CSS Selector', 'hreflang-flag'), array(&$this,'setting_string_fn'), __FILE__, 'config_section', array('o' => 'hreflangFlag_config', 'f' => 'css_selector', 't' => __('Comma separated list of CSS selector (each will be used before the "a" tag in the CSS definition).<br />Example: ".entry" will show flags only inside post/page entry nowhere else.', 'hreflang-flag')));
 
 	register_setting('hreflangFlag_group', 'hreflangFlag', array(&$this,'validate_flags') );
-	add_settings_section('flag_section', 'Flag Settings', array(&$this,'flag_section'), __FILE__);
+	add_settings_section('flag_section', __('Flag Settings', 'hreflang-flag'), array(&$this,'flag_section'), __FILE__);
       }
 
       function validate_config($input) {
@@ -234,6 +235,9 @@ if (!class_exists("hreflangFlagAdmin")) {
       function init () {
 	/* Don't forget to call common init */
       	parent::init();
+
+	/* Translation */
+	load_plugin_textdomain( 'hreflang-flag', null, $this->plugin_base_path );
 	add_action('admin_menu', array(&$this,'admin_menu'));
 	add_action('admin_init', array(&$this,'admin_init'));
       }
@@ -250,12 +254,12 @@ if (!class_exists("hreflangFlagAdmin")) {
 	      define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins' );
 
 	/* Define the plugin path */
-	$plugin_base_path	   = basename( dirname(__FILE__) );
-	$this->plugin_path 	   = trailingslashit(str_replace('\\', '/', WP_PLUGIN_DIR.'/'.$plugin_base_path));
-	$this->plugin_url  	   = trailingslashit(WP_PLUGIN_URL.'/'.$plugin_base_path);
+	$this->plugin_base_path	   = basename( dirname(__FILE__) );
+	$this->plugin_path 	   = trailingslashit(str_replace('\\', '/', WP_PLUGIN_DIR.'/'.$this->plugin_base_path));
+	$this->plugin_url  	   = trailingslashit(WP_PLUGIN_URL.'/'.$this->plugin_base_path);
         $this->default_back_pos['left']="0px 40%";
         $this->default_back_pos['right']="99% 40%";
-	
+
       	parent::load();
 	/* Add Admin action handlers */
 	register_activation_hook($this->plugin_file, array(&$this,'add_defaults_options'));

@@ -44,6 +44,10 @@ Or search wordpress.org Forums.
 
 == Changelog ==
 
+= 1.2 =
+* internationalization
+* French translation
+
 = 1.1 =
 * configuration is not reseted after re-enabling the plugin anymore.
 
